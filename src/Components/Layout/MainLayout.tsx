@@ -4,11 +4,7 @@ import styled from "styled-components";
 import Header from "../Header/Header";
 import SideBar from "../SideBar/SideBar";
 
-interface MainLayoutProps {
-  children?: React.ReactNode;
-}
-
-const MainLayout = ({}: MainLayoutProps) => {
+const MainLayout = () => {
   return (
     <MainLayoutContainer>
       <SideBar />
