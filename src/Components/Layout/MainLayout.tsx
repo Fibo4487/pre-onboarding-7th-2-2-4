@@ -8,7 +8,7 @@ interface MainLayoutProps {
   children?: React.ReactNode;
 }
 
-const MainLayout = ({ children }: MainLayoutProps) => {
+const MainLayout = ({}: MainLayoutProps) => {
   return (
     <MainLayoutContainer>
       <SideBar />
