@@ -29,7 +29,6 @@ const MainLayoutContainer = styled.div`
 const MainLayoutContent = styled.div`
   width: calc(100vw - 320px);
   margin: 0 auto;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   height: 100%;

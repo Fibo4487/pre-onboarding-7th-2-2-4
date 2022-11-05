@@ -20,14 +20,15 @@ export default Header;
 const Container = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  height: 100%;
-  padding: 20 40px;
+  height: 80px;
+  align-items: center;
+  margin: 0 40px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray_50};
 `;
 
 const UserName = styled.div`
   font-size: 14px;
   font-weight: 400;
-  margin-right: 20px;
   display: flex;
   align-items: center;
 `;

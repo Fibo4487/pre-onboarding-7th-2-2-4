@@ -8,7 +8,7 @@ export const theme: DefaultTheme = {
     graph_green: "#85DA47",
     graph_purple: "#AC8AF8",
     gray_50: "#EDEFF1",
-    gray_100: "#EDEFF1",
+    gray_100: "#D1D8DC",
     gray_300: "#94A2AD",
     gray_800: "#3A474E",
     primary_blue: "#586CF5",
