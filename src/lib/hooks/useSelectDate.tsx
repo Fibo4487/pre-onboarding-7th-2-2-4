@@ -9,10 +9,11 @@ import {
   DayPicker,
   SelectRangeEventHandler
 } from "react-day-picker";
-import { useDashBoardContext } from "../states/DashBoardContext";
+import { useRecoilState } from "recoil";
+import { dateRangeState } from "../states/DashBoardState";
 
 export const useSelectDate = (initialDate?: DateRange) => {
-  const { dateRange, setDateRange } = useDashBoardContext();
+  const [dateRange, setDateRange] = useRecoilState(dateRangeState);
   const [datePickerOpen, setDatePickerOpen] = useState(false);
 
   const dateRangeToString = ((
@@ -37,7 +38,9 @@ export const useSelectDate = (initialDate?: DateRange) => {
   };
 
   const SelectRangeEventHandler: SelectRangeEventHandler = (range) => {
-    setDateRange(range);
+    if (range?.from && range?.to) {
+      setDateRange(range);
+    }
   };
 
   const formatter: DateFormatter = (date: Date, options) => {

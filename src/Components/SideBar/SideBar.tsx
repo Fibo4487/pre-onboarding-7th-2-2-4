@@ -48,7 +48,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 320px;
-  height: 100vh;
+  height: 100%;
   padding: 0 40px;
   background-color: ${({ theme }) => theme.colors.bg_white};
   align-items: center;

@@ -2,30 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import dropdownIcon from "@/assets/DropdownIcon.svg";
 
-const MockData = [
-  "ROAS",
-  "광고비",
-  "노출수",
-  "클릭수",
-  "전환수",
-  "매출"
-] as const;
-
 interface ContentDropdownProps {
   initValue: string;
-  items: typeof MockData;
+  items: string[];
   onChange: (value: string) => void;
   isShow: boolean;
   setIsShow: React.MouseEventHandler<HTMLDivElement>;
   hasBorder?: boolean;
+  color?: string;
 }
 
 const ContentDropdown = ({
   initValue,
-  items = MockData,
+  items,
   onChange,
   isShow,
-  setIsShow
+  setIsShow,
+  hasBorder,
+  color
 }: ContentDropdownProps) => {
   const [selectedItem, setSelectedItem] = React.useState<string>(initValue);
   const handleClickItem = (item: string) => {
@@ -33,9 +27,9 @@ const ContentDropdown = ({
     onChange(item);
   };
   return (
-    <Container onClick={setIsShow}>
+    <Container onClick={setIsShow} hasBorder={hasBorder}>
       <DropdownValue>
-        <DropdownValueColor />
+        {color ? <DropdownValueColor color={color} /> : null}
         {selectedItem}
       </DropdownValue>
       <DropdownIcon>
@@ -57,11 +51,13 @@ const ContentDropdown = ({
 
 export default ContentDropdown;
 
-const Container = styled.div`
-  width: 123px;
+const Container = styled.div<{ hasBorder?: boolean }>`
+  width: 130px;
   height: 40px;
-  padding: 0 16px;
-  border: 1px solid ${({ theme }) => theme.colors.gray_100};
+  padding-left: 20px;
+  border: 1px solid
+    ${({ theme, hasBorder }) =>
+      hasBorder ? theme.colors.gray_100 : "transparent"};
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -74,13 +70,16 @@ const DropdownValueColor = styled.div<{ color?: string }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.color};
+  margin-left: 20px;
+  background-color: ${({ color }) => color};
 `;
 
 const DropdownValue = styled.div`
   font-size: 14px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.gray_800};
+  display: flex;
+  align-items: center;
 `;
 
 const DropdownIcon = styled.div`
