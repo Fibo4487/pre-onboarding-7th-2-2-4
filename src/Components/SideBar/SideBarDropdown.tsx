@@ -1,5 +1,5 @@
 import React from "react";
-import SideBarDropdownIcon from "@/assets/SideBarDropdownIcon.svg";
+import DropdownIcon from "@/assets/DropdownIcon.svg";
 import styled from "styled-components";
 
 const SideBarDropdown = () => {
@@ -15,7 +15,7 @@ const SideBarDropdown = () => {
       <Container onClick={handleClickDropdown}>
         <div className="dropdown-item">매드업</div>
         <div className="dropdown-icon">
-          <img src={SideBarDropdownIcon} alt="dropdown-icon" />
+          <img src={DropdownIcon} alt="dropdown-icon" />
         </div>
         <DropdownMenu isShow={isDropdownOpen}>
           <li className="dropdown-menu-item">매드업</li>
