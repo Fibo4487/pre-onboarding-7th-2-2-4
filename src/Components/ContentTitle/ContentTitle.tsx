@@ -10,7 +10,7 @@ interface ContentTitleProps {
 }
 
 const ContentTitle = ({ title, isDashBoard }: ContentTitleProps) => {
-  const { dateRange, toggleDatePicker, dateRangeToString, renderDatePicker } =
+  const { toggleDatePicker, dateRangeToString, renderDatePicker } =
     useSelectDate();
 
   return (
